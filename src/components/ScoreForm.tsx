@@ -9,9 +9,25 @@ interface ScoreFormProps {
 export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    let finalValue = value;
+
+    if (value !== '') {
+      const num = parseFloat(value);
+      if (name === 'dgnl') {
+        if (num < 0) finalValue = '0';
+        if (num > 1200) finalValue = '1200';
+      } else if (!['k1', 'k2', 'k3'].includes(name)) {
+        // Giới hạn các điểm thành phần từ 0 đến 10
+        if (num < 0) finalValue = '0';
+        if (num > 10 && name !== 'priorityScore') finalValue = '10';
+        // Điểm ưu tiên nếu muốn giới hạn có thể tuỳ chỉnh, tạm thời giới hạn max 10
+        if (num > 10 && name === 'priorityScore') finalValue = '10';
+      }
+    }
+
     onChange({
       ...inputs,
-      [name]: value,
+      [name]: finalValue,
     });
   };
 
