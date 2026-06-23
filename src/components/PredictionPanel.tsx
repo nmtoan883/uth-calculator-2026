@@ -35,7 +35,7 @@ export const PredictionPanel: React.FC<PredictionPanelProps> = ({ currentScore }
   if (currentScore === 0) return null;
 
   return (
-    <div className="glass-card" style={{ marginTop: '2rem', gridColumn: '1 / -1' }}>
+    <div className="glass-card" style={{ marginTop: '2rem' }}>
       <h2 className="section-title">Dự Đoán Khả Năng Trúng Tuyển 2026</h2>
       <p className="helper-text" style={{ marginBottom: '1.5rem', fontSize: '0.95rem' }}>
         Dựa trên đối chiếu điểm của bạn (<strong>{currentScore.toFixed(2)}</strong>) với điểm chuẩn Phương thức 2 năm 2025. 

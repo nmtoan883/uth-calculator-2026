@@ -30,9 +30,11 @@ const App: React.FC = () => {
         <p className="subtitle">Công cụ tính điểm xét tuyển Phương thức 2 - Xét tuyển kết hợp</p>
       </header>
       
-      <main className="main-content">
-        <ScoreForm inputs={inputs} onChange={setInputs} />
-        <ResultPanel results={results} />
+      <main>
+        <div className="main-content">
+          <ScoreForm inputs={inputs} onChange={setInputs} />
+          <ResultPanel results={results} />
+        </div>
         <PredictionPanel currentScore={results.uth120} />
       </main>
     </div>
