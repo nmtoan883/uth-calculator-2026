@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { ScoreInputs } from '../utils/calculator';
 
 interface ScoreFormProps {
@@ -7,22 +7,37 @@ interface ScoreFormProps {
 }
 
 export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     let finalValue = value;
+    let hasError = false;
 
     if (value !== '') {
       const num = parseFloat(value);
       if (name === 'dgnl') {
         if (num < 0) finalValue = '0';
-        if (num > 1200) finalValue = '1200';
-      } else if (!['k1', 'k2', 'k3'].includes(name)) {
+        if (num > 1200) {
+          finalValue = '1200';
+          setErrorMsg('Vượt quá giới hạn! Điểm ĐGNL tối đa chỉ được 1200 điểm.');
+          hasError = true;
+        }
+      } else if (!['k1', 'k2', 'k3', 'priorityScore'].includes(name)) {
         // Giới hạn các điểm thành phần từ 0 đến 10
         if (num < 0) finalValue = '0';
-        if (num > 10 && name !== 'priorityScore') finalValue = '10';
-        // Điểm ưu tiên nếu muốn giới hạn có thể tuỳ chỉnh, tạm thời giới hạn max 10
-        if (num > 10 && name === 'priorityScore') finalValue = '10';
+        if (num > 10) {
+          finalValue = '10';
+          setErrorMsg('Vượt quá giới hạn! Điểm môn học hoặc thi tốt nghiệp tối đa chỉ được 10 điểm.');
+          hasError = true;
+        }
       }
+    }
+
+    if (hasError) {
+      setTimeout(() => setErrorMsg(null), 5000);
+    } else {
+      setErrorMsg(null);
     }
 
     onChange({
@@ -35,6 +50,12 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
     <div className="glass-card">
       <h2 className="section-title">Thông tin điểm xét tuyển</h2>
       
+      {errorMsg && (
+        <div style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#dc2626', padding: '1rem', borderRadius: '0.75rem', marginBottom: '1.5rem', border: '1px solid rgba(239, 68, 68, 0.3)', animation: 'fadeInDown 0.3s ease-out' }}>
+          ⚠️ <strong>Hệ thống tự động điều chỉnh:</strong> {errorMsg}
+        </div>
+      )}
+
       {/* ĐGNL */}
       <div className="form-group">
         <h3 style={{ marginBottom: '1rem', color: 'var(--accent)' }}>1. Điểm Đánh Giá Năng Lực (ĐGNL)</h3>
