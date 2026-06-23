@@ -7,17 +7,17 @@ import './index.css';
 
 const App: React.FC = () => {
   const [inputs, setInputs] = useState<ScoreInputs>({
-    dgnl: 0,
+    dgnl: '',
     k1: 1.0,
-    hb_m1: 0,
-    hb_m2: 0,
-    hb_m3: 0,
+    hb_m1: '',
+    hb_m2: '',
+    hb_m3: '',
     k2: 1.0,
-    tn_m1: 0,
-    tn_m2: 0,
-    tn_m3: 0,
+    tn_m1: '',
+    tn_m2: '',
+    tn_m3: '',
     k3: 1.0,
-    priorityScore: 0,
+    priorityScore: '',
   });
 
   const results = calculateScores(inputs);

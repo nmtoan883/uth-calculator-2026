@@ -11,7 +11,7 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
     const { name, value } = e.target;
     onChange({
       ...inputs,
-      [name]: value === '' ? 0 : parseFloat(value),
+      [name]: value,
     });
   };
 
@@ -28,7 +28,7 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
             <input 
               type="number" 
               name="dgnl" 
-              value={inputs.dgnl || ''} 
+              value={inputs.dgnl ?? ''} 
               onChange={handleChange} 
               placeholder="VD: 850" 
             />
@@ -38,7 +38,7 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
             <input 
               type="number" 
               name="k1" 
-              value={inputs.k1 || ''} 
+              value={inputs.k1 ?? ''} 
               onChange={handleChange} 
               placeholder="1.0" 
               step="0.1"
@@ -56,19 +56,19 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
         <div className="input-grid">
           <div className="input-wrapper">
             <label>Môn 1</label>
-            <input type="number" name="hb_m1" value={inputs.hb_m1 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="hb_m1" value={inputs.hb_m1 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Môn 2</label>
-            <input type="number" name="hb_m2" value={inputs.hb_m2 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="hb_m2" value={inputs.hb_m2 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Môn 3</label>
-            <input type="number" name="hb_m3" value={inputs.hb_m3 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="hb_m3" value={inputs.hb_m3 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Hệ số k2</label>
-            <input type="number" name="k2" value={inputs.k2 || ''} onChange={handleChange} step="0.1" />
+            <input type="number" name="k2" value={inputs.k2 ?? ''} onChange={handleChange} step="0.1" />
           </div>
         </div>
       </div>
@@ -82,19 +82,19 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
         <div className="input-grid">
           <div className="input-wrapper">
             <label>Môn 1</label>
-            <input type="number" name="tn_m1" value={inputs.tn_m1 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="tn_m1" value={inputs.tn_m1 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Môn 2</label>
-            <input type="number" name="tn_m2" value={inputs.tn_m2 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="tn_m2" value={inputs.tn_m2 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Môn 3</label>
-            <input type="number" name="tn_m3" value={inputs.tn_m3 || ''} onChange={handleChange} max="10" step="0.1" />
+            <input type="number" name="tn_m3" value={inputs.tn_m3 ?? ''} onChange={handleChange} max="10" step="0.1" />
           </div>
           <div className="input-wrapper">
             <label>Hệ số k3</label>
-            <input type="number" name="k3" value={inputs.k3 || ''} onChange={handleChange} step="0.1" />
+            <input type="number" name="k3" value={inputs.k3 ?? ''} onChange={handleChange} step="0.1" />
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@ export const ScoreForm: React.FC<ScoreFormProps> = ({ inputs, onChange }) => {
           <input 
             type="number" 
             name="priorityScore" 
-            value={inputs.priorityScore || ''} 
+            value={inputs.priorityScore ?? ''} 
             onChange={handleChange} 
             step="0.1" 
           />
