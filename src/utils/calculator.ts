@@ -37,8 +37,9 @@ export const calculateScores = (inputs: ScoreInputs) => {
 
   const maxComponent = Math.max(val1, val2, val3);
 
-  // Điểm tổng UTH120
-  const uth120 = 0.4 * maxComponent + 0.3 * diemHocBa + 0.3 * diemThiTotNghiep + priorityScore;
+  // Điểm tổng UTH120 (Tối đa 1200 điểm)
+  const rawUth120 = 0.4 * maxComponent + 0.3 * diemHocBa + 0.3 * diemThiTotNghiep + priorityScore;
+  const uth120 = Math.min(rawUth120, 1200);
 
   return {
     diemHocBa,

@@ -47,7 +47,7 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({ results }) => {
           <AnimatedNumber value={results.uth120 || 0} />
         </div>
         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
-          Tối đa 1200 điểm + Ưu tiên
+          Tối đa 1200 điểm
         </div>
       </div>
 
