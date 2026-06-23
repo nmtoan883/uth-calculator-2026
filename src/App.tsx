@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ScoreForm } from './components/ScoreForm';
 import { ResultPanel } from './components/ResultPanel';
+import { PredictionPanel } from './components/PredictionPanel';
 import { calculateScores } from './utils/calculator';
 import type { ScoreInputs } from './utils/calculator';
 import './index.css';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
       <main className="main-content">
         <ScoreForm inputs={inputs} onChange={setInputs} />
         <ResultPanel results={results} />
+        <PredictionPanel currentScore={results.uth120} />
       </main>
     </div>
   );
