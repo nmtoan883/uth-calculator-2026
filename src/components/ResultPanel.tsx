@@ -65,7 +65,7 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({ results }) => {
         </div>
       </div>
       
-      <div className="glass-card score-box" style={{ background: 'rgba(0,0,0,0.1)', border: 'none', padding: '1rem' }}>
+      <div className="glass-card score-box" style={{ background: 'rgba(255,255,255,0.6)', border: 'none', padding: '1rem' }}>
         <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
           Hệ thống xét duyệt dựa trên các công thức:<br/><br/>
           <strong>UTH120</strong> = 0.4*Max + 0.3*HọcBạ + 0.3*ThiTN + ƯuTiên<br/>

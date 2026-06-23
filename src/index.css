@@ -1,14 +1,14 @@
 :root {
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-  --surface: rgba(255, 255, 255, 0.05);
-  --surface-hover: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.1);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent: #3b82f6;
-  --accent-gradient: linear-gradient(135deg, #60a5fa, #a855f7);
-  --success: #10b981;
-  --shadow-glow: 0 0 20px rgba(168, 85, 247, 0.2);
+  --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-hover: rgba(255, 255, 255, 0.9);
+  --border: rgba(255, 255, 255, 0.5);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #0284c7;
+  --accent-gradient: linear-gradient(135deg, #0284c7, #2563eb);
+  --success: #059669;
+  --shadow-glow: 0 8px 32px rgba(2, 132, 199, 0.15);
 }
 
 * {
@@ -76,7 +76,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -127,7 +127,7 @@ label {
 }
 
 input[type="number"] {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.75rem 1rem;
@@ -140,9 +140,9 @@ input[type="number"] {
 
 input[type="number"]:focus {
   outline: none;
-  border-color: #a855f7;
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+  border-color: #2563eb;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 /* Remove arrows from number input */
@@ -169,7 +169,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .score-box {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -177,8 +177,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .score-box.highlight {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(168, 85, 247, 0.1));
-  border-color: rgba(168, 85, 247, 0.3);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.05), rgba(37, 99, 235, 0.1));
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .score-label {
@@ -202,7 +202,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Tooltip/Helper styling */
 .criteria-list {
-  background: rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.6);
   padding: 1rem;
   border-radius: 0.75rem;
   margin-top: 1rem;
